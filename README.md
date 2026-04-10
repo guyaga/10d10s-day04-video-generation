@@ -2,7 +2,7 @@
   <img src="cover.jpg" alt="fal.ai Video Generation" width="100%">
 </p>
 
-<h1 align="center">Day 5 — AI Video Generation</h1>
+<h1 align="center">Day 4 — AI Video Generation</h1>
 <p align="center">
   <strong>10 Days 10 Skills</strong> · Claude Code Course by <a href="https://bestguy.ai">Guy Aga</a>
 </p>
@@ -26,7 +26,7 @@ This lesson also introduces **MCPs** — plugins that give Claude Code superpowe
 |---------|-------------|
 | "Generate a 5-second video of a sunset" | Text → AI video via Veo 3.1 |
 | "Animate this product image" | Your image → smooth video via Kling 3 |
-| "Create first frame, then animate it" | Day 1 image gen → Day 5 video gen |
+| "Create first frame, then animate it" | Day 1 image gen → Day 4 video gen |
 | "Make a cinematic intro for my brand" | Full production with all skills |
 
 ### What is an MCP?
@@ -68,9 +68,12 @@ One command to install. Then Claude can use it.
 
 ---
 
-## Step 4: Install the fal MCP (Run in Terminal — NOT inside Claude Code)
+## Step 4: Add the fal MCP Server
 
-**Close Claude Code first.** Open a regular terminal (PowerShell, Terminal, Command Prompt) and run:
+Run this command in **EITHER** of two places — both work for first-time install:
+
+- **(a)** A regular terminal (PowerShell, Terminal, Command Prompt), **OR**
+- **(b)** A **brand-new fresh conversation in Antigravity** — paste it as your first message and Claude will execute it as a shell command
 
 ```bash
 claude mcp add --transport http fal-ai https://mcp.fal.ai/mcp --header "Authorization: Bearer YOUR_FAL_KEY"
@@ -78,14 +81,26 @@ claude mcp add --transport http fal-ai https://mcp.fal.ai/mcp --header "Authoriz
 
 Replace `YOUR_FAL_KEY` with your actual API key from Step 2.
 
-> **Why outside Claude Code?** The `claude mcp add` command configures Claude Code itself — it can't configure itself from the inside. Like installing a browser extension — you do it from outside the browser.
+> **Why both work:** The command writes to Claude Code's config file. As long as it runs *before* the conversation that needs the MCP, it works — so a fresh Antigravity conversation is fine for first-time setup.
 
 ---
 
-## Step 5: Restart Claude Code & Install Skill
+## Step 5: Open a NEW Conversation & Verify
 
-1. **Close and reopen Claude Code** — the fal MCP loads on startup
-2. Open Claude Code and paste:
+After the install is approved, **open a new conversation** in Claude Code / Antigravity. Then:
+
+1. Type `/` to open the slash-command menu
+2. Scroll to the **MCP servers** option
+3. Confirm **`fal-ai`** appears in the list
+
+- ✅ Listed → you're good, move to Step 6
+- ❌ Not listed → re-check your `YOUR_FAL_KEY`, re-run Step 4, then start another new conversation and check again
+
+---
+
+## Step 6: Install the Skill
+
+In the same new conversation, paste:
 
 ```
 Install the fal-ai-video-generation skill from https://github.com/guyaga/10d10s-day04-video-generation and verify the fal MCP is connected by searching for available video models.
@@ -167,10 +182,10 @@ Then animate it with Kling 3 Pro:
 Let's create a complete product video:
 
 1. Generate a hero image of my product using nano-banano-pro (Day 1)
-2. Animate it into a 5-second video with Kling 3 (Day 5)
+2. Animate it into a 5-second video with Kling 3 (Day 4)
 3. Check the video quality with ai-video-analyzer (Day 2)
 4. Add subtitles and trim with ai-video-editor (Day 3)
-5. Generate voiceover and add narration with ai-voice-audio (Day 4)
+5. Generate voiceover and add narration with ai-voice-audio (Day 5)
 
 Save the final video to D:/Videos/product-final.mp4
 ```
@@ -225,7 +240,7 @@ Describe what **changes** — don't repeat what's already visible. "She turns to
 - [fal MCP Docs](https://fal.ai/docs/documentation/setting-up/mcp)
 - [fal Video Models](https://fal.ai/models?categories=video)
 - [Course Page — bestguy.ai](https://bestguy.ai/course/10-days-10-skills)
-- [HTML Skill Guide (Hebrew)](https://bestguy.ai/course/guides/day05-video-generation.html)
+- [HTML Skill Guide (Hebrew)](https://bestguy.ai/course/guides/day04-video-generation.html)
 
 ---
 
