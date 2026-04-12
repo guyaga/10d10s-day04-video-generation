@@ -81,13 +81,12 @@ Open a **NEW conversation** in Claude Code or Antigravity.
 
 > ⚠️ Even if you used Antigravity for Phase 1, you must open **another** new conversation now — Claude only loads MCP servers when a conversation starts, so the conversation that ran the install command won't see the new MCP yet.
 
-In the new conversation, type:
+In the new conversation, check that the MCP is connected:
 
-```
-/mcp
-```
+- **If you're using Antigravity** — type `/` to open the slash command menu, then look for **MCP servers**
+- **If you're using the terminal (Claude Code CLI)** — type `/mcp` directly
 
-You should see **`fal-ai`** in the list of connected MCP servers.
+Either way, you should see **`fal-ai`** in the list of connected MCP servers.
 
 **If it does NOT appear:**
 - From a terminal, run `claude mcp list` — `fal-ai` should be in the output
@@ -98,7 +97,7 @@ You should see **`fal-ai`** in the list of connected MCP servers.
 
 ## Phase 3: Install the Skill
 
-In the same conversation where `/mcp` showed `fal-ai`, paste this prompt:
+In the same conversation where you verified `fal-ai` is listed, paste this prompt:
 
 ```
 Install the fal-ai-video-generation skill from https://github.com/guyaga/10d10s-day04-video-generation and verify the fal MCP is connected by searching for available video models.
